@@ -1,0 +1,32 @@
+body {
+  background: linear-gradient(45deg, black, hsl(0, 0%, 30%), red);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: rgb(0, 0, 0);
+  height: 100vh;
+  overflow: hidden;
+  margin: 50px;
+}
+div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+h1,
+h2 {
+  margin: 0;
+}
+button {
+  background: linear-gradient(300deg, green, lightgreen, lightyellow, yellow);
+  border: none;
+  box-shadow: 1px 2px 1px 2px;
+  cursor: pointer;
+}
+button:hover {
+  transform: scale(1.1);
+}
+button:active {
+  box-shadow: none;
+  transform: scale(0.9);
+}
