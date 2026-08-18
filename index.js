@@ -1,3 +1,18 @@
+// Changing Favicon 
+
+const favicon = document.getElementById("favicon");
+const icons = ["one.png", "two.png", "three.png", "four.png", "five.png"];
+let index = 0;
+
+function changeFavicon()
+{
+	favicon.setAttribute("href", icons[index]);	
+	if(++index > 4)	index = 0;
+}
+
+setInterval(changeFavicon, 120);
+
+// Logic for Game
 const btn2 = document.getElementById("submit");
 const resetBtn = document.getElementById("reset");
 let nummer = 0;
