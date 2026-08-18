@@ -6,7 +6,7 @@ let index = 0;
 
 function changeFavicon()
 {
-	favicon.setAttribute("icon", icons[index]);	
+	favicon.setAttribute("href", icons[index]);	
 	if(++index > 4)	index = 0;
 }
 
