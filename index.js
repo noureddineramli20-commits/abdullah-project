@@ -46,13 +46,11 @@ btn.onclick = function () {
 
     player.value = "";
 
-	  gameEnds.textContent = "";
+    gameEnds.textContent = "";
 
     tipsText.textContent = "The game began";
 
     triesText.textContent = `you have ${10 - attemps} tries left`;
-
-    console.log(randomNmbr);
   }
   if (pressed >= 2 && running) {
     attemps++;
@@ -60,6 +58,16 @@ btn.onclick = function () {
     if (player.value === "") {
       window.alert("you have to write something!!");
       attemps--;
+      player.value = "";
+    } else if (attemps === 10 && player.value == randomNmbr) {
+      tipsText.textContent = `GOOD JOB YOU HAD THE NUMBER, THE NUMBER WAS INDEED ${randomNmbr}`;
+      triesText.textContent = `YOU HAVE TRIED ${attemps} TIMES`;
+      btn.textContent = "restart";
+      gameEnds.textContent = "THE GAME END";
+      running = false;
+      pressed = 0;
+      attemps = 0;
+      player.style.display = "none";
       player.value = "";
     } else if (attemps === 10) {
       tipsText.textContent = `YOU LOST!! THE NUMBER WAS ${randomNmbr}!`;
