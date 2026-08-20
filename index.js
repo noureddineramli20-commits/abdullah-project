@@ -13,68 +13,84 @@ function changeFavicon()
 setInterval(changeFavicon, 120);
 
 // Logic for Game
-const btn2 = document.getElementById("submit");
-const resetBtn = document.getElementById("reset");
-let nummer = 0;
+const btn = document.getElementById("btn");
+let player = document.getElementById("playerInput");
+let triesText = document.getElementById("triesLeft");
+let tipsText = document.getElementById("lowerOrHigher");
 let min = 1;
 let max = 100;
-let counter = 0;
-let text2 = document.getElementById("text");
-let text = document.getElementById("reveal");
-let text3 = document.getElementById("text3");
-let input = document.getElementById("input");
+let pressed = 0;
+let attemps = 0;
+let running = false;
+let randomNmbr = 0;
+let gameEnds = document.getElementById("gameEnds");
 
-nummer = Math.trunc(Math.random() * max - min) + min;
-console.log(nummer);
+player.style.display = "none";
 
-btn2.onclick = function () {
-  text.textContent = "";
-  counter += 1;
-  if (input.value == "") {
-    text2.textContent = "you have to write something";
-    counter--;
-    console.log(`you have tried ${counter} times`);
-  } else if (input.value <= 0) {
-    text2.textContent = "its only numbers between 1 and 100";
-    counter--;
-    console.log(`you have tried ${counter} times`);
-  } else if (input.value >= 101) {
-    text2.textContent = "its only numbers between 1 and 100";
-    counter--;
-    console.log(`you have tried ${counter} times`);
-  } else if (input.value > nummer) {
-    text2.textContent = "the number is lower";
-    console.log(`you have tried ${counter} times`);
-  } else if (input.value < nummer) {
-    text2.textContent = "the number is higher";
-    console.log(`you have tried ${counter} times`);
-  } else if (input.value == nummer) {
-    text.textContent = `the number was ${nummer}!!`;
-    text2.textContent = "you have got the number!";
-    text3.textContent = `you needed ${counter} tries for that!`;
-    console.log(`you needed ${counter} tries for that!`);
-  } else {
-    text2.textContent = "you can only do numbers";
-    counter--;
-    console.log(`you have tried ${counter} times`);
+btn.onclick = function () {
+  pressed++;
+  if (!running && pressed === 1) {
+    running = true;
+
+    player.value
+      ? window.alert(
+          "you can not write enything if the game didn't began yet!!"
+        )
+      : (player.value = "");
+
+    randomNmbr = Math.trunc(Math.random() * max - min) + min;
+
+    player.style.display = "block";
+
+    btn.textContent = "Sumbit";
+
+    player.value = "";
+
+    tipsText.textContent = "The game began";
+
+    triesText.textContent = `you have ${10 - attemps} tries left`;
+
+    console.log(randomNmbr);
   }
-  if (counter > 10) {
-    text2.textContent = "pres on restart";
-    text.textContent = `number was ${nummer}`;
-    input.value = "";
-    text3.textContent = `you did more then 10 tries so you lost!!`;
-    console.log(`you have tried ${counter} times`);
+  if (pressed >= 2 && running) {
+    attemps++;
+    btn.textContent = "try again!";
+    if (player.value === "") {
+      window.alert("you have to write something!!");
+      attemps--;
+      player.value = "";
+    } else if (attemps === 10) {
+      tipsText.textContent = `YOU LOST!! THE NUMBER WAS ${randomNmbr}!`;
+      triesText.textContent = `YOU USED ALL YOUR TRIES`;
+      btn.textContent = "restart";
+      gameEnds.textContent = "THE GAME END";
+      running = false;
+      pressed = 0;
+      attemps = 0;
+      player.style.display = "none";
+      player.value = "";
+    } else if (player.value > max || player.value < min) {
+      window.alert("The number is only between 1 and 100");
+      attemps--;
+      player.value = "";
+    } else if (player.value > randomNmbr) {
+      tipsText.textContent = "The random number is lower";
+      player.value = "";
+      triesText.textContent = `you have ${10 - attemps} tries left`;
+    } else if (player.value < randomNmbr) {
+      tipsText.textContent = "The random number is higher";
+      player.value = "";
+      triesText.textContent = `you have ${10 - attemps} tries left`;
+    } else if (player.value == randomNmbr) {
+      tipsText.textContent = `GOOD JOB YOU HAD THE NUMBER, THE NUMBER WAS INDEED ${randomNmbr}`;
+      triesText.textContent = `YOU HAVE TRIED ${attemps} TIMES`;
+      btn.textContent = "restart";
+      gameEnds.textContent = "THE GAME END";
+      running = false;
+      pressed = 0;
+      attemps = 0;
+      player.style.display = "none";
+      player.value = "";
+    }
   }
-};
-reset.onclick = function () {
-  text2.textContent = "";
-  nummer = 0;
-  text.textContent =
-    "   here will be the random number after you have written it you have 10 tries if you did you lost and have to restart!!!";
-  input.value = "";
-  text3.textContent = ``;
-  nummer = Math.trunc(Math.random() * max - min) + min;
-  counter = 0;
-  console.log(nummer);
-  console.log(`you have tried ${counter} times`);
 };
