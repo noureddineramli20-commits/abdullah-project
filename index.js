@@ -60,7 +60,7 @@ btn.onclick = function () {
       attemps--;
       player.value = "";
     } else if (attemps === 10 && player.value == randomNmbr) {
-      tipsText.textContent = `GOOD JOB YOU HAD THE NUMBER, THE NUMBER WAS INDEED ${randomNmbr}`;
+      tipsText.textContent = `GOOD JOB YOU HAVE GOT THE NUMBER, THE NUMBER WAS INDEED ${randomNmbr}`;
       triesText.textContent = `YOU HAVE TRIED ${attemps} TIMES`;
       btn.textContent = "restart";
       gameEnds.textContent = "THE GAME END";
@@ -92,7 +92,7 @@ btn.onclick = function () {
       player.value = "";
       triesText.textContent = `you have ${10 - attemps} tries left`;
     } else if (player.value == randomNmbr) {
-      tipsText.textContent = `GOOD JOB YOU HAD THE NUMBER, THE NUMBER WAS INDEED ${randomNmbr}`;
+      tipsText.textContent = `GOOD JOB YOU HAVE GOT THE NUMBER, THE NUMBER WAS INDEED ${randomNmbr}`;
       triesText.textContent = `YOU HAVE TRIED ${attemps} TIMES`;
       btn.textContent = "restart";
       gameEnds.textContent = "THE GAME END";
