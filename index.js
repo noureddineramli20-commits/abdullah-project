@@ -46,6 +46,8 @@ btn.onclick = function () {
 
     player.value = "";
 
+	  gameEnds.textContent = "";
+
     tipsText.textContent = "The game began";
 
     triesText.textContent = `you have ${10 - attemps} tries left`;
