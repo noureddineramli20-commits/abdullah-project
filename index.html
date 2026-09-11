@@ -12,36 +12,49 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <!--here is the intro 1 time use never see again until reloading the page-->
+   <!--here is the intro 1 time use never see again until reloading the page-->
     <div id="intro">
       <h1 id="introtext">guess the number</h1>
-      <button onclick="startintro()" id="startIntroBtn">play</button>
+      <button title="start the game" onclick="startintro()" id="startIntroBtn">
+        play
+      </button>
     </div>
-<!--this is the menu if you want single or multyplayer-->
+    <!--this is the menu if you want single or multyplayer-->
     <div id="singleOrMultyplayerDiv">
       <div id="menusectionsingleOrMultyplayerDiv">
         <div id="divInDivFormenusectionsingleOrMultyplayerDiv">
           <h1 id="singleOrMultyplayerDivTitle">choose a gamemode</h1>
           <button
+            title="play single player "
             onclick="singleplayergamechoice()"
             class="secondDivBtn"
             id="singleplayerChoiceBtn"
           >
-            single player</button
+            single player
+          </button>
+          <a href="update.html"
+            ><button
+              title="play a duel with a friend"
+              class="secondDivBtn"
+              id="multyplayerChoiceBtn"
+            >
+              2 player
+            </button></a
           >
-          <a href="update.html"><button class="secondDivBtn" id="multyplayerChoiceBtn">
-            2 player
-          </button></a>
         </div>
       </div>
     </div>
-  <!--this is the hole single player game-->
+    <!--this is the hole single player game-->
     <div id="divOfSingleplayer">
       <h1 id="titleOfSingleplayer">
         Guess the number between 1 and 100, you have 10 tries!!!
       </h1>
       <div id="divinsidesingleplayer">
-        <button onclick="leavesingleplayer()" id="leaveGameSingleplayer">
+        <button
+          title="leave"
+          onclick="leavesingleplayer()"
+          id="leaveGameSingleplayer"
+        >
           <svg
             width="40px"
             height="40px"
@@ -85,7 +98,11 @@
             </g>
           </svg>
         </button>
-        <button onclick="openInfoDiv()" id="moreInfoForSingleplayerGame">
+        <button
+          title="more info"
+          onclick="openInfoDiv()"
+          id="moreInfoForSingleplayerGame"
+        >
           <svg
             width="54px"
             height="54px"
@@ -113,7 +130,13 @@
         </button>
         <h2 id="triesLeftSingleplayer">you have 10 tries left</h2>
         <div id="infoSingleplayerGame">
-          <button onclick="closeInfoDiv()" id="leaveInfoSingleplayer">X</button>
+          <button
+            title="leave info"
+            onclick="closeInfoDiv()"
+            id="leaveInfoSingleplayer"
+          >
+            X
+          </button>
           <div id="explanationInfoSingleplayerGame">
             <h1>how to play this game</h1>
             <h1>single player</h1>
@@ -134,12 +157,19 @@
           <p id="triesLeftInMenu"></p>
           <div id="btnsForDivinsidesingleplayer">
             <button
+              title="restart"
               onclick="restartInMenuSingleplayer()"
               id="replaySingleplayerBtn"
             >
               restart
             </button>
-            <button onclick="goBackToMenuSingleplayer()" id="backtomenuforsingleplayer">back to menu</button>
+            <button
+              title="go back to single player"
+              onclick="goBackToMenuSingleplayer()"
+              id="backtomenuforsingleplayer"
+            >
+              back to menu
+            </button>
           </div>
         </div>
         <input id="playerInputSingleplayer" type="number" min="1" max="100" />
