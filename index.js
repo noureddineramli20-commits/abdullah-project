@@ -111,7 +111,7 @@ function gamePlaySingleplayer() {
       runningInSingleplayer = false;
       pressedInSingleplayer = 0;
       attempsInSingleplayer = 0;
-      plaplayerInSingleplayeryer.style.display = "none";
+      playerInSingleplayer.style.display = "none";
       playerInSingleplayer.value = "";
     } else if (playerInSingleplayer.value > maxOfSingleplayer || playerInSingleplayer.value < minOfSingleplayer) {
       window.alert("The number is only between 1 and 100");
