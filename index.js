@@ -121,12 +121,12 @@ function gamePlaySingleplayer() {
     } else if (playerInSingleplayer.value > randomNmbrInSingleplayer) {
       tipsTextInSingleplayer.textContent = "The random number is lower";
       playerInSingleplayer.value = "";
-      singleplayerpage.style.backgroundColor = "hsl(64, 100%, 70%)";
+      singleplayerpage.style.backgroundColor = "aquamarine";
       triesTextInSingleplayer.textContent = `you have ${10 - attempsInSingleplayer} tries left`;
     } else if (playerInSingleplayer.value < randomNmbrInSingleplayer) {
       tipsTextInSingleplayer.textContent = "The random number is higher";
       playerInSingleplayer.value = "";
-      singleplayerpage.style.backgroundColor = "hsl(64, 100%, 50%)";
+      singleplayerpage.style.backgroundColor = "burlywood";
       triesTextInSingleplayer.textContent = `you have ${10 - attempsInSingleplayer} tries left`;
     } else if (playerInSingleplayer.value == randomNmbrInSingleplayer) {
       tipsTextInMenusingleplayer.textContent = `GOOD JOB YOU HAVE GOT THE NUMBER, THE NUMBER WAS INDEED ${randomNmbrInSingleplayer}`;
