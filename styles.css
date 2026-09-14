@@ -328,7 +328,7 @@ text-align: center;
   align-items: flex-start;
   justify-content: center;
   overflow: scroll;
-  font-family: fantasy;
+  font-family: monospace;
   border: 2px solid black;
   border-radius: 10px;
 }
