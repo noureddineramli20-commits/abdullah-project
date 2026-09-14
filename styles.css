@@ -330,6 +330,7 @@ text-align: center;
   overflow: scroll;
   border: 2px solid black;
   border-radius: 10px;
+    text-align: center;
 }
 #leaveInfoSingleplayer {
   position: relative;
