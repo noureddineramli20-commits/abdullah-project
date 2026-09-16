@@ -321,7 +321,7 @@ textarea {
 }
 .infoTitleSingleplayer {
   position: relative;
-  top: 1px;
+  top: 100px;
   left: -80px;
 }
 #infoSingleplayerGame {
