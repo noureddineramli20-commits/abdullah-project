@@ -321,8 +321,8 @@ textarea {
 }
 .infoTitleSingleplayer {
   position: relative;
-  top: -3px;
-  left: -45px;
+  top: -53px;
+  left: -60px;
 }
 #infoSingleplayerGame {
   width: 350px;
@@ -369,6 +369,6 @@ textarea {
   display: inline-block;
   position: relative;
   width: 250px;
-  left:-50px;
-  top: 5px;
+  left:-35px;
+  top: 50px;
 }
